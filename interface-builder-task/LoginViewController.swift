@@ -11,17 +11,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginFieldBackgroundView: UIView!
     @IBOutlet weak var passwordFieldBackgroundView: UIView!
     
-    func setViewProperty(view v : UIView, radius r: CGFloat, width w: CGFloat) {
-        v.layer.cornerRadius = r
-        v.layer.borderWidth = w
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewProperty(view: loginFieldBackgroundView, radius: 8, width: 1)
-        setViewProperty(view: passwordFieldBackgroundView, radius: 8, width: 1)
-        
+        setViewProperty(editedView: loginFieldBackgroundView, targetRadius: 8, targetWidth: 1)
+        setViewProperty(editedView: passwordFieldBackgroundView, targetRadius: 8, targetWidth: 1)
+    }
+    
+    func setViewProperty(editedView view: UIView, targetRadius radius: CGFloat, targetWidth width: CGFloat) {
+        view.layer.cornerRadius = radius
+        view.layer.borderWidth = width
     }
     
 }
-
