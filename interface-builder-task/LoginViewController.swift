@@ -8,18 +8,14 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var loginFieldBackgroundView: UIView!
-    @IBOutlet weak var passwordFieldBackgroundView: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewProperty(editedView: loginFieldBackgroundView, targetRadius: 8, targetWidth: 1)
-        setViewProperty(editedView: passwordFieldBackgroundView, targetRadius: 8, targetWidth: 1)
     }
     
-    func setViewProperty(editedView view: UIView, targetRadius radius: CGFloat, targetWidth width: CGFloat) {
-        view.layer.cornerRadius = radius
-        view.layer.borderWidth = width
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
     }
-    
 }
