@@ -13,6 +13,8 @@
 		E91C8D0C25FF8CD00094AEC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91C8D0A25FF8CD00094AEC4 /* Main.storyboard */; };
 		E91C8D0E25FF8CD10094AEC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91C8D0D25FF8CD10094AEC4 /* Assets.xcassets */; };
 		E91C8D1125FF8CD10094AEC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91C8D0F25FF8CD10094AEC4 /* LaunchScreen.storyboard */; };
+		E9532C2D2603C1760054F266 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9532C2C2603C1760054F266 /* CustomTextField.swift */; };
+		E9532C312603CB450054F266 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9532C302603CB450054F266 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		E91C8D0D25FF8CD10094AEC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E91C8D1025FF8CD10094AEC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E91C8D1225FF8CD10094AEC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9532C2C2603C1760054F266 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E9532C302603CB450054F266 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		E91C8D0325FF8CD00094AEC4 /* interface-builder-task */ = {
 			isa = PBXGroup;
 			children = (
+				E9532C2B2603C1200054F266 /* CustomViews */,
 				E91C8D0425FF8CD00094AEC4 /* AppDelegate.swift */,
 				E91C8D0625FF8CD00094AEC4 /* SceneDelegate.swift */,
 				E91C8D0825FF8CD00094AEC4 /* LoginViewController.swift */,
@@ -65,6 +70,15 @@
 				E91C8D1225FF8CD10094AEC4 /* Info.plist */,
 			);
 			path = "interface-builder-task";
+			sourceTree = "<group>";
+		};
+		E9532C2B2603C1200054F266 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				E9532C2C2603C1760054F266 /* CustomTextField.swift */,
+				E9532C302603CB450054F266 /* CustomButton.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9532C2D2603C1760054F266 /* CustomTextField.swift in Sources */,
 				E91C8D0925FF8CD00094AEC4 /* LoginViewController.swift in Sources */,
 				E91C8D0525FF8CD00094AEC4 /* AppDelegate.swift in Sources */,
 				E91C8D0725FF8CD00094AEC4 /* SceneDelegate.swift in Sources */,
+				E9532C312603CB450054F266 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
