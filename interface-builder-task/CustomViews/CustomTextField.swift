@@ -10,7 +10,7 @@ import UIKit
 @IBDesignable
 class CustomTextField: UITextField {
     
-    var textPadding = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 5)
+    var textPadding = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 5)
     var bgColor = CGColor(red: 196, green: 196, blue: 196, alpha: 255)
     
     @IBInspectable var borderWidth: CGFloat = 0 {
