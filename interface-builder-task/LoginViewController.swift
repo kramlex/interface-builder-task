@@ -8,40 +8,33 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    
     @IBOutlet weak var loginTextField: CustomTextField!
-    @IBOutlet weak var passTextField: CustomTextField!
     
+    @IBOutlet weak var passwordTextField: CustomTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
-        self.reDelegateTextFields()
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return true
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.switchBaseNextTextField(textField)
-        return true
+        hideKeyboardWhenTappedAround()
+        reDelegateTextFields()
     }
     
     private func reDelegateTextFields() {
         loginTextField.delegate = self
-        passTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switchBaseNextTextField(textField)
+        return true
     }
     
     private func switchBaseNextTextField(_ textField: UITextField) {
         switch textField {
-        case self.loginTextField:
-            self.passTextField.becomeFirstResponder()
-        case self.passTextField:
-            passTextField.resignFirstResponder()
+        case loginTextField:
+            passwordTextField.becomeFirstResponder()
         default:
-            self.passTextField.resignFirstResponder()
+            passwordTextField.resignFirstResponder()
         }
     }
 }

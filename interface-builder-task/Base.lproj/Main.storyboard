@@ -114,6 +114,7 @@
                     <connections>
                         <outlet property="loginTextField" destination="SWG-c1-FaD" id="2X1-yn-2vO"/>
                         <outlet property="passTextField" destination="y7e-fH-NtD" id="9ar-6D-N8H"/>
+                        <outlet property="passwordTextField" destination="y7e-fH-NtD" id="XOr-Lw-d1U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
