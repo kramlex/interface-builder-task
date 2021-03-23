@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nHP-gZ-cwc">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -45,7 +45,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="su8-L9-76P">
-                                        <rect key="frame" x="16" y="81.000000000000014" width="382" height="192.33333333333337"/>
+                                        <rect key="frame" x="16" y="81.000000000000014" width="382" height="232.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизация" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjN-25-kOK">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="43"/>
@@ -60,7 +60,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Login" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="SWG-c1-FaD" customClass="CustomTextField" customModule="interface_builder_task" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="127.33333333333334" width="382" height="21"/>
+                                                <rect key="frame" x="0.0" y="127.33333333333334" width="382" height="41"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -74,7 +74,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="y7e-fH-NtD" customClass="CustomTextField" customModule="interface_builder_task" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="171.33333333333334" width="382" height="21"/>
+                                                <rect key="frame" x="0.0" y="191.33333333333331" width="382" height="41"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -120,6 +120,57 @@
             </objects>
             <point key="canvasLocation" x="72.463768115942031" y="75"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="G2M-gF-7Hq">
+            <objects>
+                <viewController id="nHP-gZ-cwc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VtI-9B-RYa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-sO-Tpw">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tnc-nn-FCp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6j-ly-qS0">
+                                                <rect key="frame" x="186" y="221" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Tnc-nn-FCp" firstAttribute="centerY" secondItem="5mY-sO-Tpw" secondAttribute="centerY" id="FXI-Xh-xHO"/>
+                                    <constraint firstItem="Tnc-nn-FCp" firstAttribute="trailing" secondItem="miN-Ug-rUH" secondAttribute="trailing" id="NTa-Vq-BOg"/>
+                                    <constraint firstItem="Tnc-nn-FCp" firstAttribute="centerX" secondItem="5mY-sO-Tpw" secondAttribute="centerX" id="On1-kk-cVz"/>
+                                    <constraint firstItem="Tnc-nn-FCp" firstAttribute="leading" secondItem="miN-Ug-rUH" secondAttribute="leading" id="bV2-4g-VmR"/>
+                                    <constraint firstItem="Tnc-nn-FCp" firstAttribute="bottom" secondItem="miN-Ug-rUH" secondAttribute="bottom" id="hA3-sw-SWf"/>
+                                    <constraint firstItem="Tnc-nn-FCp" firstAttribute="top" secondItem="miN-Ug-rUH" secondAttribute="top" id="ziC-yE-sMz"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="miN-Ug-rUH"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Spf-UQ-DGy"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0GZ-Ob-2yn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5mY-sO-Tpw" firstAttribute="top" secondItem="0GZ-Ob-2yn" secondAttribute="top" id="6hC-yX-ran"/>
+                            <constraint firstItem="0GZ-Ob-2yn" firstAttribute="bottom" secondItem="5mY-sO-Tpw" secondAttribute="bottom" id="7WR-vU-rVP"/>
+                            <constraint firstItem="0GZ-Ob-2yn" firstAttribute="trailing" secondItem="5mY-sO-Tpw" secondAttribute="trailing" id="M61-Vv-h17"/>
+                            <constraint firstItem="5mY-sO-Tpw" firstAttribute="leading" secondItem="0GZ-Ob-2yn" secondAttribute="leading" id="VeJ-PV-ZhE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTl-gq-m4y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950.72463768115949" y="75"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="6XT-uk-TuO">
@@ -129,10 +180,10 @@
             <size key="intrinsicContentSize" width="148" height="30"/>
         </designable>
         <designable name="SWG-c1-FaD">
-            <size key="intrinsicContentSize" width="39.666666666666664" height="21"/>
+            <size key="intrinsicContentSize" width="56.666666666666664" height="41"/>
         </designable>
         <designable name="y7e-fH-NtD">
-            <size key="intrinsicContentSize" width="70" height="21"/>
+            <size key="intrinsicContentSize" width="87" height="41"/>
         </designable>
     </designables>
     <resources>
