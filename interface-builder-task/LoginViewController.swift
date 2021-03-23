@@ -21,6 +21,15 @@ class LoginViewController: UIViewController {
         loginTextField.delegate = self
         passwordTextField.delegate = self
     }
+    
+    private func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dissmisKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dissmisKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -37,20 +46,4 @@ extension LoginViewController: UITextFieldDelegate {
             passwordTextField.resignFirstResponder()
         }
     }
-}
-
-extension LoginViewController {
-    private func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dissmisKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dissmisKeyboard() {
-        view.endEditing(true)
-    }
-}
-
-// MARK: Keyboard Handling for using ScrollView
-extension LoginViewController {
-    // code
 }

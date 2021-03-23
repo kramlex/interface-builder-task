@@ -15,14 +15,14 @@ class CustomTextField: UITextField {
     
     @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet {
-            self.layer.borderWidth = borderWidth
+            layer.borderWidth = borderWidth
             layoutIfNeeded()
         }
     }
     
     @IBInspectable var cornerRadius: CGFloat = 0.0 {
         didSet {
-            self.layer.cornerRadius = cornerRadius
+            layer.cornerRadius = cornerRadius
             layoutIfNeeded()
         }
     }
@@ -38,16 +38,16 @@ class CustomTextField: UITextField {
     }
     
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        let rect = super.editingRect(forBounds: bounds)
-        return rect.inset(by: textPadding)
+        let editingRect = super.editingRect(forBounds: bounds)
+        return editingRect.inset(by: textPadding)
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        let rect = super.textRect(forBounds: bounds)
-        return rect.inset(by: textPadding)
+        let textRect = super.textRect(forBounds: bounds)
+        return textRect.inset(by: textPadding)
     }
     
     func setViewBackgroundColor() {
-        self.layer.backgroundColor = bgColor
+        layer.backgroundColor = bgColor
     }
 }
