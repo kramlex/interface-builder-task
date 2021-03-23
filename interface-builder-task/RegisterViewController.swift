@@ -13,14 +13,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var loginRegisterTextField: CustomTextField!
     @IBOutlet weak var emailRegisterTextField: CustomTextField!
     @IBOutlet weak var passwordRegisterTextField: CustomTextField!
-    var temporaryInsets: UIEdgeInsets = .zero
     
     override func viewDidLoad() {
-        hideKeyboardWhenTappedAround()
-        reDelegateTextFields()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        hideKeyboardWhenTappedAround()
+        reDelegateTextFields()
     }
     
     private func reDelegateTextFields() {
