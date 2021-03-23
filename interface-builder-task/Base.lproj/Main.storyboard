@@ -120,29 +120,114 @@
             </objects>
             <point key="canvasLocation" x="72.463768115942031" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="G2M-gF-7Hq">
             <objects>
-                <viewController id="nHP-gZ-cwc" sceneMemberID="viewController">
+                <viewController id="nHP-gZ-cwc" customClass="RegisterViewController" customModule="interface_builder_task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VtI-9B-RYa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-sO-Tpw">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-sO-Tpw">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tnc-nn-FCp">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tnc-nn-FCp" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6j-ly-qS0">
-                                                <rect key="frame" x="186" y="221" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="RvO-1n-gvz" userLabel="Field Stack View">
+                                                <rect key="frame" x="16" y="75" width="382" height="277.33333333333331"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhJ-7r-f1Y">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="43"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите свои регистрационные данные" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkr-AB-uJy">
+                                                        <rect key="frame" x="0.0" y="66" width="382" height="19.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Login" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="EZe-BN-dJX" customClass="CustomTextField" customModule="interface_builder_task" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="108.33333333333334" width="382" height="41"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="9CD-LL-D8e" customClass="CustomTextField" customModule="interface_builder_task" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="172.33333333333331" width="382" height="41"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="S8k-Tk-2st" customClass="CustomTextField" customModule="interface_builder_task" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="236.33333333333331" width="382" height="41"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="9"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="elZ-w3-GZg" userLabel="Button Stack View">
+                                                <rect key="frame" x="0.0" y="681" width="414" height="117"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmX-yX-3tr" customClass="CustomButtom" customModule="interface_builder_task" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                                        <color key="backgroundColor" red="0.19215686269999999" green="0.40784313729999999" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="51" id="ac0-r8-9V9"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Войти">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNr-U9-bHo" customClass="CustomButtom" customModule="interface_builder_task" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="66" width="414" height="51"/>
+                                                        <color key="backgroundColor" red="0.19215686269999999" green="0.40784313729999999" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="51" id="h21-9c-jaz"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Зарегестрироваться">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="RvO-1n-gvz" firstAttribute="leading" secondItem="Tnc-nn-FCp" secondAttribute="leading" constant="16" id="62G-RU-ouV"/>
+                                            <constraint firstItem="elZ-w3-GZg" firstAttribute="leading" secondItem="Tnc-nn-FCp" secondAttribute="leading" id="6Wk-2d-Lrj"/>
+                                            <constraint firstAttribute="bottom" secondItem="elZ-w3-GZg" secondAttribute="bottom" constant="20" symbolic="YES" id="SIN-8m-IA9"/>
+                                            <constraint firstAttribute="trailing" secondItem="elZ-w3-GZg" secondAttribute="trailing" id="YzB-oZ-rUE"/>
+                                            <constraint firstItem="RvO-1n-gvz" firstAttribute="top" secondItem="Tnc-nn-FCp" secondAttribute="top" constant="75.000000000000014" id="hfL-WE-QnX"/>
+                                            <constraint firstAttribute="trailing" secondItem="RvO-1n-gvz" secondAttribute="trailing" constant="16" id="k1B-qj-CCD"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -158,7 +243,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0GZ-Ob-2yn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="5mY-sO-Tpw" firstAttribute="top" secondItem="0GZ-Ob-2yn" secondAttribute="top" id="6hC-yX-ran"/>
                             <constraint firstItem="0GZ-Ob-2yn" firstAttribute="bottom" secondItem="5mY-sO-Tpw" secondAttribute="bottom" id="7WR-vU-rVP"/>
@@ -166,6 +251,12 @@
                             <constraint firstItem="5mY-sO-Tpw" firstAttribute="leading" secondItem="0GZ-Ob-2yn" secondAttribute="leading" id="VeJ-PV-ZhE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailRegisterTextField" destination="9CD-LL-D8e" id="qgC-l2-p4s"/>
+                        <outlet property="loginRegisterTextField" destination="EZe-BN-dJX" id="MP4-UW-pJK"/>
+                        <outlet property="passwordRegisterTextField" destination="S8k-Tk-2st" id="Okw-yu-EVQ"/>
+                        <outlet property="scrollView" destination="5mY-sO-Tpw" id="VfA-Pa-0LN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTl-gq-m4y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,8 +270,23 @@
         <designable name="6pp-XV-zFR">
             <size key="intrinsicContentSize" width="148" height="30"/>
         </designable>
+        <designable name="9CD-LL-D8e">
+            <size key="intrinsicContentSize" width="63" height="41"/>
+        </designable>
+        <designable name="EZe-BN-dJX">
+            <size key="intrinsicContentSize" width="56.666666666666664" height="41"/>
+        </designable>
+        <designable name="S8k-Tk-2st">
+            <size key="intrinsicContentSize" width="87" height="41"/>
+        </designable>
         <designable name="SWG-c1-FaD">
             <size key="intrinsicContentSize" width="56.666666666666664" height="41"/>
+        </designable>
+        <designable name="hNr-U9-bHo">
+            <size key="intrinsicContentSize" width="148" height="30"/>
+        </designable>
+        <designable name="vmX-yX-3tr">
+            <size key="intrinsicContentSize" width="44" height="30"/>
         </designable>
         <designable name="y7e-fH-NtD">
             <size key="intrinsicContentSize" width="87" height="41"/>
