@@ -8,18 +8,49 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var loginFieldBackgroundView: UIView!
-    @IBOutlet weak var passwordFieldBackgroundView: UIView!
+    @IBOutlet weak var loginTextField: CustomTextField!
     
+    @IBOutlet weak var passwordTextField: CustomTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewProperty(editedView: loginFieldBackgroundView, targetRadius: 8, targetWidth: 1)
-        setViewProperty(editedView: passwordFieldBackgroundView, targetRadius: 8, targetWidth: 1)
+        hideKeyboardWhenTappedAround()
+        reDelegateTextFields()
     }
     
-    func setViewProperty(editedView view: UIView, targetRadius radius: CGFloat, targetWidth width: CGFloat) {
-        view.layer.cornerRadius = radius
-        view.layer.borderWidth = width
+    private func reDelegateTextFields() {
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switchBaseNextTextField(textField)
+        return true
     }
     
+    private func switchBaseNextTextField(_ textField: UITextField) {
+        switch textField {
+        case loginTextField:
+            passwordTextField.becomeFirstResponder()
+        default:
+            passwordTextField.resignFirstResponder()
+        }
+    }
+}
+
+extension LoginViewController {
+    private func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dissmisKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dissmisKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+// MARK: Keyboard Handling for using ScrollView
+extension LoginViewController {
+    // code
 }
