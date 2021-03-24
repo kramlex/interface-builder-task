@@ -30,8 +30,8 @@ class RegisterViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func keyboardWillBeShown(_ notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+    @objc func keyboardWillBeShown(_ sender: Notification) {
+        if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let bottomInset = keyboardSize.height
             scrollView.contentInset.bottom = bottomInset
             scrollView.verticalScrollIndicatorInsets.bottom = bottomInset + view.frame.origin.y - view.safeAreaInsets.bottom
@@ -43,7 +43,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    @objc func keyboardWillBeHidden(_ notification: Notification) {
+    @objc func keyboardWillBeHidden(_ sender: Notification) {
         scrollView.contentInset = .zero
         scrollView.verticalScrollIndicatorInsets = .zero
     }
