@@ -15,9 +15,37 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordRegisterTextField: CustomTextField!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         registerKeyboardNotifications()
         hideKeyboardWhenTappedAround()
         reDelegateTextFields()
+    }
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeShown(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWillBeShown(_ notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let bottomInset = keyboardSize.height
+            scrollView.contentInset.bottom = bottomInset
+            scrollView.verticalScrollIndicatorInsets.bottom = bottomInset + view.frame.origin.y - view.safeAreaInsets.bottom
+            let yPosition = view.frame.origin.x - bottomInset
+            if yPosition > 0 {
+                let scrollPoint = CGPoint(x: 0, y: yPosition)
+                scrollView.setContentOffset(scrollPoint, animated: false)
+            }
+        }
+    }
+    
+    @objc func keyboardWillBeHidden(_ notification: Notification) {
+        scrollView.contentInset = .zero
+        scrollView.verticalScrollIndicatorInsets = .zero
     }
     
     private func reDelegateTextFields() {
@@ -39,9 +67,6 @@ class RegisterViewController: UIViewController {
         unregisterKeyboardNotifications()
     }
 }
-
-// MARK: Scroll View Keyboard Handler
-extension RegisterViewController : ScrollViewKeyboardDelegate {}
 
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
