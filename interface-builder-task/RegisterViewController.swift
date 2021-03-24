@@ -9,17 +9,24 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    // MARK: Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginRegisterTextField: CustomTextField!
     @IBOutlet weak var emailRegisterTextField: CustomTextField!
     @IBOutlet weak var passwordRegisterTextField: CustomTextField!
     @IBOutlet weak var stackView: UIStackView!
     
+    // MARK: Variables
+    var defaultFontSize: CGFloat = 0.0
+    
+    @IBOutlet weak var registrationLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         registerKeyboardNotifications()
         hideKeyboardWhenTappedAround()
         reDelegateTextFields()
+        defaultFontSize =  registrationLabel.font.pointSize
+        scrollView.delegate = self
     }
     
     func registerKeyboardNotifications() {
@@ -42,16 +49,10 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    func scrollViewSetContentOffset() {
-        let yPosition = -view.safeAreaInsets.bottom
-        let scrollPoint = CGPoint(x: 0, y: yPosition)
-        scrollView.setContentOffset(scrollPoint, animated: true)
-    }
-    
     @objc func keyboardWillBeHidden(_ sender: Notification) {
         scrollView.contentInset = .zero
         scrollView.verticalScrollIndicatorInsets = .zero
-        scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
+        scrollView.contentOffset.y = 0.0
     }
     
     private func reDelegateTextFields() {
@@ -67,6 +68,13 @@ class RegisterViewController: UIViewController {
     
     @objc func dissmisKeyboard() {
         view.endEditing(true)
+    }
+    
+    func resizeLabelFont() {
+        let offsetY: CGFloat = scrollView.contentOffset.y
+        if (offsetY < 0 && offsetY > -150) {
+            registrationLabel.font = registrationLabel.font.withSize(defaultFontSize * (-offsetY / 200.0 + 1.0 ))
+        }
     }
     
     deinit {
@@ -89,5 +97,11 @@ extension RegisterViewController: UITextFieldDelegate {
         default:
             passwordRegisterTextField.resignFirstResponder()
         }
+    }
+}
+
+extension RegisterViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        resizeLabelFont()
     }
 }
