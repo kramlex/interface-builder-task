@@ -22,7 +22,10 @@ class LoginViewController: UIViewController {
     
     func registerKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeShown(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(detectAnimationDuration(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     func unregisterKeyboardNotifications() {
@@ -45,6 +48,13 @@ class LoginViewController: UIViewController {
     @objc func keyboardWillBeHidden(_ sender: Notification) {
         scrollView.contentInset = .zero
         scrollView.verticalScrollIndicatorInsets = .zero
+    }
+    
+    @objc func detectAnimationDuration(_ sender: Notification) {
+        print("Keyboard did hide")
+        if let keyboardAnimationDuration = sender.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] {
+            print("Keyboard animation duration: \(keyboardAnimationDuration) sec")
+        }
     }
     
     private func reDelegateTextFields() {
