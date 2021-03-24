@@ -13,6 +13,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var loginRegisterTextField: CustomTextField!
     @IBOutlet weak var emailRegisterTextField: CustomTextField!
     @IBOutlet weak var passwordRegisterTextField: CustomTextField!
+    @IBOutlet weak var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,18 +35,23 @@ class RegisterViewController: UIViewController {
         if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let bottomInset = keyboardSize.height
             scrollView.contentInset.bottom = bottomInset
-            scrollView.verticalScrollIndicatorInsets.bottom = bottomInset + view.frame.origin.y - view.safeAreaInsets.bottom
-            let yPosition = view.frame.origin.x - bottomInset
-            if yPosition > 0 {
-                let scrollPoint = CGPoint(x: 0, y: yPosition)
-                scrollView.setContentOffset(scrollPoint, animated: false)
-            }
+            scrollView.verticalScrollIndicatorInsets.bottom = bottomInset + view.safeAreaInsets.bottom
+            let yPosition = -view.safeAreaInsets.bottom
+            let scrollPoint = CGPoint(x: 0, y: yPosition)
+            scrollView.setContentOffset(scrollPoint, animated: false)
         }
+    }
+    
+    func scrollViewSetContentOffset() {
+        let yPosition = -view.safeAreaInsets.bottom
+        let scrollPoint = CGPoint(x: 0, y: yPosition)
+        scrollView.setContentOffset(scrollPoint, animated: true)
     }
     
     @objc func keyboardWillBeHidden(_ sender: Notification) {
         scrollView.contentInset = .zero
         scrollView.verticalScrollIndicatorInsets = .zero
+        scrollView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
     }
     
     private func reDelegateTextFields() {

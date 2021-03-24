@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="net-wg-Ntq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nHP-gZ-cwc">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -250,6 +250,7 @@
                         <outlet property="loginRegisterTextField" destination="EZe-BN-dJX" id="MP4-UW-pJK"/>
                         <outlet property="passwordRegisterTextField" destination="S8k-Tk-2st" id="Okw-yu-EVQ"/>
                         <outlet property="scrollView" destination="5mY-sO-Tpw" id="VfA-Pa-0LN"/>
+                        <outlet property="stackView" destination="RvO-1n-gvz" id="iua-gD-yQ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTl-gq-m4y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -381,6 +382,7 @@
                         <outlet property="loginAuthTextField" destination="2g1-kC-wLJ" id="4TJ-a5-ctQ"/>
                         <outlet property="passwordAuthTextField" destination="vL1-9w-JTJ" id="hzG-j5-ww8"/>
                         <outlet property="scrollView" destination="ZWK-EJ-PmF" id="DND-2J-mpj"/>
+                        <outlet property="stackView" destination="jZy-Qm-uyf" id="jD2-uJ-De0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QL-9B-bD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
