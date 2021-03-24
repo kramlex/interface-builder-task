@@ -123,7 +123,7 @@
         <!--Register View Controller-->
         <scene sceneID="G2M-gF-7Hq">
             <objects>
-                <viewController id="nHP-gZ-cwc" customClass="RegisterViewController" customModule="interface_builder_task" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterController" id="nHP-gZ-cwc" customClass="RegisterViewController" customModule="interface_builder_task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VtI-9B-RYa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -259,7 +259,7 @@
         <!--Login View Controller-->
         <scene sceneID="4Y3-oG-ZRd">
             <objects>
-                <viewController id="net-wg-Ntq" customClass="LoginViewController" customModule="interface_builder_task" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" id="net-wg-Ntq" customClass="LoginViewController" customModule="interface_builder_task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wdm-AC-MKV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
