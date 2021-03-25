@@ -72,7 +72,7 @@ class RegisterViewController: UIViewController {
     
     func resizeLabelFont() {
         let offsetY: CGFloat = scrollView.contentOffset.y
-        if (offsetY < 0 && offsetY > -150) {
+        if (offsetY < 0.0 && offsetY > -150.0) {
             registrationLabel.font = registrationLabel.font.withSize(defaultFontSize * (-offsetY / 200.0 + 1.0 ))
         }
     }

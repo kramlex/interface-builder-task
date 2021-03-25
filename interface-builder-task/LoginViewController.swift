@@ -83,7 +83,7 @@ class LoginViewController: UIViewController {
     // MARK: multiply = 2
     func resizeLabelFont() {
         let offsetY: CGFloat = scrollView.contentOffset.y
-        if (offsetY < 0 && offsetY > -150) {
+        if (offsetY < 0.0 && offsetY > -150.0) {
             authLabel.font = authLabel.font.withSize(defaultFontSize * (-offsetY / 200.0 + 1.0 ))
         }
     }
