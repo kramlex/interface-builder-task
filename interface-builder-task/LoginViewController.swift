@@ -7,19 +7,30 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    @IBOutlet weak var loginTextField: CustomTextField!
+class LoginViewController: KeyboardNotificationViewController {
     
-    @IBOutlet weak var passwordTextField: CustomTextField!
+    // MARK: Outlets
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var loginAuthTextField: CustomTextField!
+    @IBOutlet weak var passwordAuthTextField: CustomTextField!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var authLabel: UILabel!
+    
+    // MARK: Variables
+    var defaultFontSize: CGFloat = 0.0
+    
     override func viewDidLoad() {
+        super.changingView = scrollView
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         reDelegateTextFields()
+        defaultFontSize = authLabel.font.pointSize
+        scrollView.delegate = self
     }
     
     private func reDelegateTextFields() {
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
+        loginAuthTextField.delegate = self
+        passwordAuthTextField.delegate = self
     }
     
     private func hideKeyboardWhenTappedAround() {
@@ -30,6 +41,15 @@ class LoginViewController: UIViewController {
     @objc func dissmisKeyboard() {
         view.endEditing(true)
     }
+    
+    
+    // MARK: multiply = 2
+    func resizeLabelFont() {
+        let offsetY: CGFloat = scrollView.contentOffset.y
+        if (offsetY < 0.0 && offsetY > -150.0) {
+            authLabel.font = authLabel.font.withSize(defaultFontSize * (-offsetY / 200.0 + 1.0 ))
+        }
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -37,13 +57,19 @@ extension LoginViewController: UITextFieldDelegate {
         switchBaseNextTextField(textField)
         return true
     }
-    
+
     private func switchBaseNextTextField(_ textField: UITextField) {
         switch textField {
-        case loginTextField:
-            passwordTextField.becomeFirstResponder()
+        case loginAuthTextField:
+            passwordAuthTextField.becomeFirstResponder()
         default:
-            passwordTextField.resignFirstResponder()
+            passwordAuthTextField.resignFirstResponder()
         }
     }
+}
+
+extension LoginViewController: UIScrollViewDelegate {
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            resizeLabelFont()
+        }
 }
