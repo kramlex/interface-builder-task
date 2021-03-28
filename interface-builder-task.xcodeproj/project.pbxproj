@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E914ECF8260D1BC700B585DF /* KeyboardNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E914ECF7260D1BC700B585DF /* KeyboardNotificationViewController.swift */; };
 		E91C8D0525FF8CD00094AEC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C8D0425FF8CD00094AEC4 /* AppDelegate.swift */; };
 		E91C8D0725FF8CD00094AEC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C8D0625FF8CD00094AEC4 /* SceneDelegate.swift */; };
 		E91C8D0925FF8CD00094AEC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C8D0825FF8CD00094AEC4 /* LoginViewController.swift */; };
@@ -15,10 +16,16 @@
 		E91C8D1125FF8CD10094AEC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91C8D0F25FF8CD10094AEC4 /* LaunchScreen.storyboard */; };
 		E9532C2D2603C1760054F266 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9532C2C2603C1760054F266 /* CustomTextField.swift */; };
 		E9532C312603CB450054F266 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9532C302603CB450054F266 /* CustomButton.swift */; };
+		E95B85A9260CB6B500EC6276 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B85A8260CB6B500EC6276 /* TableViewController.swift */; };
+		E95B85AD260CB9B000EC6276 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95B85AC260CB9B000EC6276 /* TableViewCell.xib */; };
+		E95B85B0260CBAFA00EC6276 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B85AF260CBAFA00EC6276 /* TableViewCell.swift */; };
+		E95B85B4260CCAC200EC6276 /* GreatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B85B2260CCAC200EC6276 /* GreatTableViewCell.swift */; };
+		E95B85B5260CCAC200EC6276 /* GreatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95B85B3260CCAC200EC6276 /* GreatTableViewCell.xib */; };
 		E97887BF260A797A00857B41 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97887BE260A797A00857B41 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E914ECF7260D1BC700B585DF /* KeyboardNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationViewController.swift; sourceTree = "<group>"; };
 		E91C8D0125FF8CD00094AEC4 /* interface-builder-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "interface-builder-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91C8D0425FF8CD00094AEC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E91C8D0625FF8CD00094AEC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +36,11 @@
 		E91C8D1225FF8CD10094AEC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9532C2C2603C1760054F266 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E9532C302603CB450054F266 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E95B85A8260CB6B500EC6276 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		E95B85AC260CB9B000EC6276 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		E95B85AF260CBAFA00EC6276 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		E95B85B2260CCAC200EC6276 /* GreatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatTableViewCell.swift; sourceTree = "<group>"; };
+		E95B85B3260CCAC200EC6276 /* GreatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreatTableViewCell.xib; sourceTree = "<group>"; };
 		E97887BE260A797A00857B41 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,15 +74,18 @@
 		E91C8D0325FF8CD00094AEC4 /* interface-builder-task */ = {
 			isa = PBXGroup;
 			children = (
-				E9532C2B2603C1200054F266 /* CustomViews */,
-				E91C8D0425FF8CD00094AEC4 /* AppDelegate.swift */,
-				E91C8D0625FF8CD00094AEC4 /* SceneDelegate.swift */,
-				E91C8D0825FF8CD00094AEC4 /* LoginViewController.swift */,
-				E91C8D0A25FF8CD00094AEC4 /* Main.storyboard */,
-				E91C8D0D25FF8CD10094AEC4 /* Assets.xcassets */,
-				E91C8D0F25FF8CD10094AEC4 /* LaunchScreen.storyboard */,
 				E91C8D1225FF8CD10094AEC4 /* Info.plist */,
+				E91C8D0425FF8CD00094AEC4 /* AppDelegate.swift */,
+				E91C8D0825FF8CD00094AEC4 /* LoginViewController.swift */,
 				E97887BE260A797A00857B41 /* RegisterViewController.swift */,
+				E91C8D0625FF8CD00094AEC4 /* SceneDelegate.swift */,
+				E95B85A8260CB6B500EC6276 /* TableViewController.swift */,
+				E91C8D0D25FF8CD10094AEC4 /* Assets.xcassets */,
+				E9532C2B2603C1200054F266 /* CustomViews */,
+				E91C8D0F25FF8CD10094AEC4 /* LaunchScreen.storyboard */,
+				E91C8D0A25FF8CD00094AEC4 /* Main.storyboard */,
+				E95B85AB260CB98600EC6276 /* Rows */,
+				E914ECF7260D1BC700B585DF /* KeyboardNotificationViewController.swift */,
 			);
 			path = "interface-builder-task";
 			sourceTree = "<group>";
@@ -82,6 +97,17 @@
 				E9532C302603CB450054F266 /* CustomButton.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		E95B85AB260CB98600EC6276 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				E95B85AC260CB9B000EC6276 /* TableViewCell.xib */,
+				E95B85AF260CBAFA00EC6276 /* TableViewCell.swift */,
+				E95B85B2260CCAC200EC6276 /* GreatTableViewCell.swift */,
+				E95B85B3260CCAC200EC6276 /* GreatTableViewCell.xib */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91C8D1125FF8CD10094AEC4 /* LaunchScreen.storyboard in Resources */,
+				E95B85B5260CCAC200EC6276 /* GreatTableViewCell.xib in Resources */,
+				E95B85AD260CB9B000EC6276 /* TableViewCell.xib in Resources */,
 				E91C8D0E25FF8CD10094AEC4 /* Assets.xcassets in Resources */,
 				E91C8D0C25FF8CD00094AEC4 /* Main.storyboard in Resources */,
 			);
@@ -155,6 +183,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9532C2D2603C1760054F266 /* CustomTextField.swift in Sources */,
+				E95B85B4260CCAC200EC6276 /* GreatTableViewCell.swift in Sources */,
+				E914ECF8260D1BC700B585DF /* KeyboardNotificationViewController.swift in Sources */,
+				E95B85B0260CBAFA00EC6276 /* TableViewCell.swift in Sources */,
+				E95B85A9260CB6B500EC6276 /* TableViewController.swift in Sources */,
 				E91C8D0925FF8CD00094AEC4 /* LoginViewController.swift in Sources */,
 				E91C8D0525FF8CD00094AEC4 /* AppDelegate.swift in Sources */,
 				E97887BF260A797A00857B41 /* RegisterViewController.swift in Sources */,
