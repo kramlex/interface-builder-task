@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: KeyboardNotificationViewController {
     
     // MARK: Outlets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -20,49 +20,12 @@ class LoginViewController: UIViewController {
     var defaultFontSize: CGFloat = 0.0
     
     override func viewDidLoad() {
+        super.changingView = scrollView
         super.viewDidLoad()
-        registerKeyboardNotifications()
         hideKeyboardWhenTappedAround()
         reDelegateTextFields()
         defaultFontSize = authLabel.font.pointSize
         scrollView.delegate = self
-    }
-    
-    func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeShown(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(detectAnimationDuration(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
-    }
-    
-    func unregisterKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc func keyboardWillBeShown(_ sender: Notification) {
-        if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            let bottomInset = keyboardSize.height
-            scrollView.contentInset.bottom = bottomInset
-            scrollView.verticalScrollIndicatorInsets.bottom = bottomInset + view.frame.origin.y - view.safeAreaInsets.bottom
-            let yPosition = -view.safeAreaInsets.bottom
-            let scrollPoint = CGPoint(x: 0, y: yPosition)
-            scrollView.setContentOffset(scrollPoint, animated: false)
-        }
-    }
-    
-    @objc func keyboardWillBeHidden(_ sender: Notification) {
-        scrollView.contentInset = .zero
-        scrollView.verticalScrollIndicatorInsets = .zero
-        scrollView.contentOffset.y = 0.0
-    }
-    
-    // MARK: detect Animation Time
-    @objc func detectAnimationDuration(_ sender: Notification) {
-        print("Keyboard did hide")
-        if let keyboardAnimationDuration = sender.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] {
-            print("Keyboard animation duration: \(keyboardAnimationDuration) sec")
-        }
     }
     
     private func reDelegateTextFields() {
@@ -86,10 +49,6 @@ class LoginViewController: UIViewController {
         if (offsetY < 0.0 && offsetY > -150.0) {
             authLabel.font = authLabel.font.withSize(defaultFontSize * (-offsetY / 200.0 + 1.0 ))
         }
-    }
-    
-    deinit {
-        unregisterKeyboardNotifications()
     }
 }
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: KeyboardNotificationViewController {
     
     // MARK: Outlets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -15,44 +15,18 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailRegisterTextField: CustomTextField!
     @IBOutlet weak var passwordRegisterTextField: CustomTextField!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var registrationLabel: UILabel!
     
     // MARK: Variables
     var defaultFontSize: CGFloat = 0.0
     
-    @IBOutlet weak var registrationLabel: UILabel!
     override func viewDidLoad() {
+        super.changingView = scrollView
         super.viewDidLoad()
-        registerKeyboardNotifications()
         hideKeyboardWhenTappedAround()
         reDelegateTextFields()
         defaultFontSize =  registrationLabel.font.pointSize
         scrollView.delegate = self
-    }
-    
-    func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeShown(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    func unregisterKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc func keyboardWillBeShown(_ sender: Notification) {
-        if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            let bottomInset = keyboardSize.height
-            scrollView.contentInset.bottom = bottomInset
-            scrollView.verticalScrollIndicatorInsets.bottom = bottomInset + view.safeAreaInsets.bottom
-            let yPosition = -view.safeAreaInsets.bottom
-            let scrollPoint = CGPoint(x: 0, y: yPosition)
-            scrollView.setContentOffset(scrollPoint, animated: false)
-        }
-    }
-    
-    @objc func keyboardWillBeHidden(_ sender: Notification) {
-        scrollView.contentInset = .zero
-        scrollView.verticalScrollIndicatorInsets = .zero
-        scrollView.contentOffset.y = 0.0
     }
     
     private func reDelegateTextFields() {
@@ -75,10 +49,9 @@ class RegisterViewController: UIViewController {
         if (offsetY < 0.0 && offsetY > -150.0) {
             registrationLabel.font = registrationLabel.font.withSize(defaultFontSize * (-offsetY / 200.0 + 1.0 ))
         }
-    }
-    
-    deinit {
-        unregisterKeyboardNotifications()
+        if (offsetY < -150.0) {
+            scrollView.contentOffset.y = -150.0
+        }
     }
 }
 
