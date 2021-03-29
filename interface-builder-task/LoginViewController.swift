@@ -42,7 +42,6 @@ class LoginViewController: KeyboardNotificationViewController {
         view.endEditing(true)
     }
     
-    
     // MARK: multiply = 2
     func resizeLabelFont() {
         let offsetY: CGFloat = scrollView.contentOffset.y
@@ -69,7 +68,7 @@ extension LoginViewController: UITextFieldDelegate {
 }
 
 extension LoginViewController: UIScrollViewDelegate {
-        func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            resizeLabelFont()
-        }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        resizeLabelFont()
+    }
 }
