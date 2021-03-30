@@ -50,7 +50,6 @@ class KeyboardNotificationViewController: UIViewController {
         changingView.contentInset = .zero
         changingView.verticalScrollIndicatorInsets = .zero
         changingView.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
-//        changingView.contentOffset.y = 0.0
     }
     
     deinit {

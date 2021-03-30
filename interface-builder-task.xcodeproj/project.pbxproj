@@ -22,6 +22,10 @@
 		E95B85B4260CCAC200EC6276 /* GreatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B85B2260CCAC200EC6276 /* GreatTableViewCell.swift */; };
 		E95B85B5260CCAC200EC6276 /* GreatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95B85B3260CCAC200EC6276 /* GreatTableViewCell.xib */; };
 		E97887BF260A797A00857B41 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97887BE260A797A00857B41 /* RegisterViewController.swift */; };
+		E988CC452612066200189527 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CC432612066200189527 /* CollectionViewCell.swift */; };
+		E988CC462612066200189527 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E988CC442612066200189527 /* CollectionViewCell.xib */; };
+		E988CC4A261209C600189527 /* ColletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CC49261209C600189527 /* ColletionViewController.swift */; };
+		E988CC4F26120D7D00189527 /* UICollectionViewCell+NibName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988CC4E26120D7D00189527 /* UICollectionViewCell+NibName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		E95B85B2260CCAC200EC6276 /* GreatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatTableViewCell.swift; sourceTree = "<group>"; };
 		E95B85B3260CCAC200EC6276 /* GreatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreatTableViewCell.xib; sourceTree = "<group>"; };
 		E97887BE260A797A00857B41 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E988CC432612066200189527 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		E988CC442612066200189527 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		E988CC49261209C600189527 /* ColletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColletionViewController.swift; sourceTree = "<group>"; };
+		E988CC4E26120D7D00189527 /* UICollectionViewCell+NibName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+NibName.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		E91C8D0325FF8CD00094AEC4 /* interface-builder-task */ = {
 			isa = PBXGroup;
 			children = (
+				E988CC4C26120D4C00189527 /* Extansion */,
 				E91C8D1225FF8CD10094AEC4 /* Info.plist */,
 				E91C8D0425FF8CD00094AEC4 /* AppDelegate.swift */,
 				E91C8D0825FF8CD00094AEC4 /* LoginViewController.swift */,
@@ -86,6 +95,7 @@
 				E91C8D0A25FF8CD00094AEC4 /* Main.storyboard */,
 				E95B85AB260CB98600EC6276 /* Rows */,
 				E914ECF7260D1BC700B585DF /* KeyboardNotificationViewController.swift */,
+				E988CC49261209C600189527 /* ColletionViewController.swift */,
 			);
 			path = "interface-builder-task";
 			sourceTree = "<group>";
@@ -102,12 +112,38 @@
 		E95B85AB260CB98600EC6276 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
+				E988CC422612061300189527 /* CollectionViewRows */,
+				E988CC402612060100189527 /* TableViewRows */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
+		E988CC402612060100189527 /* TableViewRows */ = {
+			isa = PBXGroup;
+			children = (
 				E95B85AC260CB9B000EC6276 /* TableViewCell.xib */,
 				E95B85AF260CBAFA00EC6276 /* TableViewCell.swift */,
 				E95B85B2260CCAC200EC6276 /* GreatTableViewCell.swift */,
 				E95B85B3260CCAC200EC6276 /* GreatTableViewCell.xib */,
 			);
-			path = Rows;
+			path = TableViewRows;
+			sourceTree = "<group>";
+		};
+		E988CC422612061300189527 /* CollectionViewRows */ = {
+			isa = PBXGroup;
+			children = (
+				E988CC432612066200189527 /* CollectionViewCell.swift */,
+				E988CC442612066200189527 /* CollectionViewCell.xib */,
+			);
+			path = CollectionViewRows;
+			sourceTree = "<group>";
+		};
+		E988CC4C26120D4C00189527 /* Extansion */ = {
+			isa = PBXGroup;
+			children = (
+				E988CC4E26120D7D00189527 /* UICollectionViewCell+NibName.swift */,
+			);
+			path = Extansion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +205,7 @@
 			files = (
 				E91C8D1125FF8CD10094AEC4 /* LaunchScreen.storyboard in Resources */,
 				E95B85B5260CCAC200EC6276 /* GreatTableViewCell.xib in Resources */,
+				E988CC462612066200189527 /* CollectionViewCell.xib in Resources */,
 				E95B85AD260CB9B000EC6276 /* TableViewCell.xib in Resources */,
 				E91C8D0E25FF8CD10094AEC4 /* Assets.xcassets in Resources */,
 				E91C8D0C25FF8CD00094AEC4 /* Main.storyboard in Resources */,
@@ -182,6 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E988CC4F26120D7D00189527 /* UICollectionViewCell+NibName.swift in Sources */,
+				E988CC4A261209C600189527 /* ColletionViewController.swift in Sources */,
 				E9532C2D2603C1760054F266 /* CustomTextField.swift in Sources */,
 				E95B85B4260CCAC200EC6276 /* GreatTableViewCell.swift in Sources */,
 				E914ECF8260D1BC700B585DF /* KeyboardNotificationViewController.swift in Sources */,
@@ -192,6 +231,7 @@
 				E97887BF260A797A00857B41 /* RegisterViewController.swift in Sources */,
 				E91C8D0725FF8CD00094AEC4 /* SceneDelegate.swift in Sources */,
 				E9532C312603CB450054F266 /* CustomButton.swift in Sources */,
+				E988CC452612066200189527 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
